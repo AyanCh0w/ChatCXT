@@ -19,6 +19,8 @@ ChatCXT:The new cars released at CES 2023 include the BMW Prototype, the Ram EV 
 GPT3: CES 2023 has not yet happened, so it is not possible to answer this question at this time.
 
 
+---
+
 QUERY: What is Taylors new album?
 
 ChatCXT: Taylor Swift's tenth studio album, Midnights, was released on October 21, 2022. The album is a mix of electronica, synth-pop, bedroom pop, and dream pop. It was produced by Swift, Jack Antonoff, Sounwave, Jahaan Sweet, and Keanu Beats.
