@@ -1,3 +1,5 @@
+#MADE BY AyanCh0w
+
 import requests
 from bs4 import BeautifulSoup
 import openai
