@@ -5,7 +5,8 @@ from bs4 import BeautifulSoup
 import openai
 
 openai.api_key = ""
-QUERY = ""
+QUERY = "What is taylors new album?"
+WORDCOUNT = 100
 response = requests.get(f'https://www.google.com/search?q={QUERY.replace(" ", "+")}&safe=active&ssui=on')
 soup = BeautifulSoup(response.text, 'html.parser')
 urlResults = []
@@ -22,6 +23,8 @@ def checkBlacklist(item, blacklist=BLACKLIST):
             return False
     return True
 
+print("Loading: [++--------]")
+
 # Extract all URLS from page
 results = soup.find_all("a")
 for result in results:
@@ -32,9 +35,8 @@ for result in results:
                     urlResults.append(result.get("href").split("/url?q=",1)[1].split("&",1)[0].split("%",1)[0])
                 else:
                     urlResults.append(result.get("href").split("/url?q=",1)[1].split("&",1)[0])
-
+print("Loading: [++++------]")
 context = []
-WORDCOUNT = 50
 for result in urlResults:
     response = requests.get(result)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -49,13 +51,13 @@ for result in urlResults:
     text = '\n'.join(chunk for chunk in chunks if chunk)
 
     context.append(text.split()[:WORDCOUNT])
-
+print("Loading: [++++++----]")
 strContext = ""
 for i in range(len(urlResults)):
     strContext += " ".join(context[i])+"\n\n"
 
 prompt = "context:\n" + strContext + "\n" + QUERY
-
+print("Loading: [++++++++--]")
 response = openai.Completion.create(
   model="text-davinci-003",
   prompt=prompt,
@@ -65,4 +67,5 @@ response = openai.Completion.create(
   frequency_penalty=0,
   presence_penalty=0
 )
+print("Loading: [++++++++++]\n\n")
 print(response["choices"][0]["text"])
