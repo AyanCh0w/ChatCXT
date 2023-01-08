@@ -12,6 +12,9 @@ Controlling amount of info from pages
 
 Examples: 
 
+---
+
+
 QUERY: What are the new cars released at ces 2023?
 
 ChatCXT:The new cars released at CES 2023 include the BMW Prototype, the Ram EV Truck, the Sony/Honda Car, the Volkswagen ID.7 Electric Sedan, the Afeela Electric SUV, the Bollinger B2 Electric Truck, the Lucid Air Electric Luxury Sedan, and the Tesla Cybertruck.
