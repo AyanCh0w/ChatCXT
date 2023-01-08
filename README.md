@@ -10,7 +10,7 @@ Controlling amount of info from pages
 
 ---
 
-Examples: 
+**Examples: **
 
 ---
 
